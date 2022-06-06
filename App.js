@@ -6,12 +6,13 @@ import { styles } from "./styles";
 export default function App() {
   const [text, setText] = useState("");	
   const [list, setList] = useState([]);
+
   const [itemSelected, setItemSelected] = useState({});
   const [modalVisible, setModalVisible] = useState(false);
 
   const handleOnChangeText= (text) => {
     setText(text);
-    //console.log(text);
+    
   }
 
   const addItem = () => {
@@ -19,27 +20,27 @@ export default function App() {
     setList((currentList => [...currentList, {id: Math.random(), value: text},
     ]));
     setText("");
-    console.log(list);
+    
   }
 };
 
 
-  const onHandleDelete = (id) => {
+  const onHandlerDelete = (id) => {
     setList((currentList) => currentList.filter((item) => item.id !== id));
     setItemSelected({});
     setModalVisible(!modalVisible);
   }
 
-  const onHandleModal = (id) => {
-    setItemSelected(list, filter((item) => item.id !== id));
+  const onHandlerModal = (id) => {
+    setItemSelected(list.filter((item) => item.id !== id)[0]);
     setModalVisible(!modalVisible);
   }
 
   const renderItem = ({item}) => (
-    <View  style={styles.containerItemList}
+    <View style={styles.containerItemList}
     key={item.id}>
       <Text style={styles.itemList}>{item.value}</Text>
-      <TouchableOpacity style={styles.buttonDeleteText} onPress={(item) => onHandleModal(item.id)}>
+      <TouchableOpacity style={styles.buttonDelete} onPress={(item) => onHandlerModal(item.id)}>
         <Text style={styles.buttonDeleteText}>X</Text>
       </TouchableOpacity>
     </View>
@@ -53,7 +54,7 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.content}>
         <TextInput
-          placeholder="escribe tu nombre"
+          placeholder="New Task"
           style={styles.input}
           placeholderTextColor="#6B4E71"
           value={text}
@@ -69,32 +70,30 @@ export default function App() {
           style={styles.containerList} />
       <Modal
         animationType="slide"
-       
         visible={modalVisible}
         onRequestClose={() => null}>
-          <TouchableOpacity style={styles.modalContent} onPress={() => setModalVisible(!modalVisible)}>
+
+        <View style={styles.modalContent}>
             <View style={styles.modalTitleContainer}>
               <Text style={styles.modalTitle}>Delete item</Text>
+              <TouchableOpacity 
+              style={styles.buttonDelete} 
+              onPress={() => setModalVisible(!modalVisible)}>
+                <Text>X</Text>
+              </TouchableOpacity>
             </View>
-            <Text style={styles.modalText}>Are you sure you want to delete this item?</Text>
-            <Text style={styles.modalText}>{itemSelected.value}</Text>
+            <Text style={styles.modalText}>Are you sure?</Text>
+            <Text style={styles.modalMessage}>{itemSelected.value}</Text>  
             <Button 
             title="OK" 
-            onPress={() => onHandleDelete(itemSelected.id)} color="#6B4E71">
+            onPress={() => onHandlerDelete(itemSelected.id)} color="#6B4E71">
             </Button>
-            </TouchableOpacity>
-        </Modal>
-      </View>
+        </View>
+      </Modal>
+    </View>
   
 
-      <View style={styles.header}>
-        <TextInput
-          placeholder="item 1"
-          style={styles.headerInput}
-          placeholderTextColor="#6B4E71"
-        />
-        <Button title="+" onPress={() => null} color="#6B4E71" />
-      </View>
+
       <View style={styles.menu}>
         <TouchableOpacity style={styles.buttonsItems} onPress={() => null}>
         <Text style={styles.menuText}>Tarea</Text>

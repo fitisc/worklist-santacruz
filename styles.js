@@ -21,13 +21,6 @@ export const styles = StyleSheet.create({
     justifyContent: "space-around",
     marginTop: 40,
     marginHorizontal: 20,
-    backgroundColor: "#d2d0d3",
-    borderRadius: 10,
-    borderBoxWidth: 3,
-    borderColor: "#161516",
-
-  },
-  headerInput: {
 
   },
 
@@ -67,9 +60,71 @@ export const styles = StyleSheet.create({
   menuText: {
     fontSize: 20,
   },
-  itemList{
+  itemList: {
+   fontSize: 14,
+    color: "#6B4E71",
+
+  },
+  containerList: {
+    flex: 1,
+    marginHorizontal: 20,
+    marginVertical: 10,
+   
+  },
+  containerItemList: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginVertical: 10,
+    marginHorizontal: 20,
+  },
+
+  buttonDelete:{
+    backgroundColor: "#926892",
+    borderRadius: 15,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+  },
+  buttonDeleteText:{
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  modalContent: {
+    flex: 1,
+    backgroundColor: "#fff",
+    borderRadius: 15,
+    padding: 30,
+    justifyContent: "center",
+    alignItems: "center",
+
+  },
+  modalTitleContainer: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+  },
+  modalTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#6B4E71",
+    marginHorizontal: 20,
+    marginVertical: 10,
+
+  },
+  modalText: {
+    fontSize: 20,
+    color: "#6B4E71",
     marginHorizontal: 20,
     marginVertical: 10,
     
   },
+  modalMessage: {
+    fontSize: 20,
+    color: "#6B4E71",
+    marginHorizontal: 20,
+    fontWeight: "bold",
+  },
+  
+
 });
