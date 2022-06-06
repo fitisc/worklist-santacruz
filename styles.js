@@ -11,11 +11,7 @@ export const styles = StyleSheet.create({
     marginTop: 40,
     marginHorizontal: 20,
   },
-  input: {
-    borderBottomWidth: 1,
-    borderBottomColor: "#6B4E71",
-    flex: 0.85,
-  },
+ 
   header: {
     flexDirection: "row",
     justifyContent: "space-around",
@@ -60,36 +56,14 @@ export const styles = StyleSheet.create({
   menuText: {
     fontSize: 20,
   },
-  itemList: {
-   fontSize: 14,
-    color: "#6B4E71",
-
-  },
+ 
   containerList: {
     flex: 1,
     marginHorizontal: 20,
     marginVertical: 10,
    
   },
-  containerItemList: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginVertical: 10,
-    marginHorizontal: 20,
-  },
-
-  buttonDelete:{
-    backgroundColor: "#926892",
-    borderRadius: 15,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-  },
-  buttonDeleteText:{
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "bold",
-  },
+  
   modalContent: {
     flex: 1,
     backgroundColor: "#fff",
