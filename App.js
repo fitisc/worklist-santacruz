@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import { View, Button, Text, TouchableOpacity, FlatList } from "react-native";
 import { TouchableHighlight } from "react-native";
-import ListItem from '../ListItem/index';
-import CustomModal from './Modal/index';
+import ListItem from "./src/components/ListItem/index.js";
+import CustomModal from "./src/components/Modal/index.js";
 import Input from './src/components/Input';
 import {styles} from './styles';
 

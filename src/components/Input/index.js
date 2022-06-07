@@ -3,18 +3,18 @@ import {TextInput} from 'react-native';
 import {style} from './styles';
 
 
-const Input = ({placeholder, styles, placeholderTextColor, value, onChangeText, onBlur, onFocus, editable, ...props}) => {
+const Input = ({placeholder, style, placeholderTextColor, value, onChangeText, ...props}) => {
 
 const onChangeTextHandler = (text) => {
     onChangeText(text);
 };
-const onHandlerBlur = () => {
-    onBlur();
-};
+//const onHandlerBlur = () => {
+//    onBlur();
+//};
 
-const onHandlerFocus = () => {
-    onFocus();
-};
+//const onHandlerFocus = () => {
+ //   onFocus();
+//};
 
 
 
@@ -22,13 +22,12 @@ const onHandlerFocus = () => {
         <TextInput
             {...props}
             placeholder={placeholder}
-            style={[styles.input, {...style}]}
+            style={{...style}}
             placeholderTextColor={placeholderTextColor}
             value={value}
             onChangeText={onChangeTextHandler}
-            onBlur={onHandlerBlur}
-            onFocus={onHandlerFocus}
-            editable={editable}
+            
+            
 
       />
     )

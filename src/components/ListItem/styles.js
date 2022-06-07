@@ -1,6 +1,6 @@
-import {styleSheet} from "react-native" ;
+import {StyleSheet} from "react-native" ;
 
-export const styles = styleSheet.create({
+export const styles = StyleSheet.create({
     containerItemList: {
         flexDirection: "row",
         justifyContent: "space-between",
